@@ -27,7 +27,7 @@ adminRouter.post("/signUp", async function(req,res){
         firstName : z.string().min(2).max(13),
         lastName : z.string().min(2).max(10)
     }).strict()
-
+// parsing 
     const parsedbody = verifiedInputs.safeParse(req.body)
     if(!parsedbody.success){
         res.json({
@@ -63,7 +63,7 @@ adminRouter.post("/signUp", async function(req,res){
     }
 
 });
-
+// admin login route
 adminRouter.post("/logIn", async function(req,res){
     const {email, password} = req.body;
 
